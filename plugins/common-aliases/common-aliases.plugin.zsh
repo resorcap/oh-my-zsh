@@ -46,10 +46,6 @@ alias unexport='unset'
 
 alias whereami=display_info
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
 # zsh is able to auto-do some kungfoo
 # depends on the SUFFIX :)
 if is-at-least 4.2.0; then
