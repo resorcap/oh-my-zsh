@@ -1,3 +1,6 @@
+# zsh configure
+plugins=(git extract z vi-mode autojump common-aliases python)
+
 # Check for updates on initial load...
 if [ "$DISABLE_AUTO_UPDATE" != "true" ]; then
   env ZSH=$ZSH DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $ZSH/tools/check_for_upgrade.sh
@@ -115,3 +118,5 @@ else
     fi
   fi
 fi
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
