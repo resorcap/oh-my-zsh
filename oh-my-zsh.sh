@@ -1,5 +1,9 @@
 # zsh configure
-plugins=(git extract z vi-mode autojump common-aliases python)
+if [[ `uname` == "Darwin" ]]; then
+    plugins=(git extract z vi-mode autojump common-aliases python)
+else
+    plugins=(git extract z vi-mode autojump common-aliases python tmux)
+fi
 
 # Check for updates on initial load...
 if [ "$DISABLE_AUTO_UPDATE" != "true" ]; then
