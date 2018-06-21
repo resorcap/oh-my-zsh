@@ -1,8 +1,8 @@
 # zsh configure
 if [[ `uname` == "Darwin" ]]; then
-    plugins=(git extract z vi-mode autojump common-aliases python)
+    plugins=(git extract z vi-mode autojump common-aliases python zsh-autosuggestions)
 else
-    plugins=(git extract z vi-mode autojump common-aliases python tmux)
+    plugins=(git extract z vi-mode autojump common-aliases python tmux zsh-autosuggestions)
 fi
 
 # Check for updates on initial load...
