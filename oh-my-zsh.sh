@@ -1,4 +1,10 @@
 # zsh configure
+HYPHEN_INSENSITIVE="true"
+DISABLE_AUTO_UPDATE="true"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 if [[ `uname` == "Darwin" ]]; then
     plugins=(git extract vi-mode autojump common-aliases python zsh-autosuggestions)
 else
