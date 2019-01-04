@@ -48,7 +48,7 @@ alias gap='git apply'
 
 alias gb='git branch'
 alias gba='git branch -a'
-alias gbd='git branch -d'
+alias gbd='git branch -D'
 alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
 alias gbl='git blame -b -w'
 alias gbnm='git branch --no-merged'

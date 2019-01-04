@@ -6,9 +6,9 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 if [[ `uname` == "Darwin" ]]; then
-    plugins=(git extract vi-mode autojump common-aliases python zsh-autosuggestions)
+    plugins=(git extract vi-mode autojump common-aliases python)
 else
-    plugins=(git extract vi-mode common-aliases python tmux zsh-autosuggestions)
+    plugins=(git extract vi-mode common-aliases python tmux)
 fi
 
 # Check for updates on initial load...
