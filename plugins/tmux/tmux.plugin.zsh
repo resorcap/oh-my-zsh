@@ -9,6 +9,8 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 host_ip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | grep -v '192.168.*.*' | head -1`
+user=`whoami`
+tmux_name="$user@$host_ip"
 
 # Only run if tmux is actually installed
 if which tmux &> /dev/null
@@ -70,11 +72,11 @@ if which tmux &> /dev/null
 		# Try to connect to an existing session.
 		elif [[ "$ZSH_TMUX_AUTOCONNECT" == "true" ]]
 		then
-			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` attach || \tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG` new -s $host_ip
+			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` attach || \tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG` new -s $tmux_name
 			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
 		# Just run tmux, fixing the TERM variable if requested.
 		else
-			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG` new -s $host_ip
+			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG` new -s $tmux_name
 			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
 		fi
 	}
