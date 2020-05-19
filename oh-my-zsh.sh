@@ -5,9 +5,9 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 if [[ `uname` == "Darwin" ]]; then
-    plugins=(git extract vi-mode autojump common-aliases python copydir copyfile)
+    plugins=(git extract vi-mode autojump common-aliases python copydir copyfile kubectl)
 else
-    plugins=(git extract vi-mode common-aliases python tmux)
+    plugins=(git extract vi-mode common-aliases python tmux kubectl)
 fi
 
 # Check for updates on initial load...
